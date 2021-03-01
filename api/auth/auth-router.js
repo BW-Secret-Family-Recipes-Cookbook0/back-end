@@ -48,17 +48,6 @@ router.post("/login", (req, res) => {
   res.end("implement login, please!");
 });
 
-// function generateToken(user) {
-//   const payload = {
-//     subject: user.id,
-//     username: user.username,
-//     lat: Date.now(),
-//   };
-//   const options = {
-//     expiresIn: "1h",
-//   };
-//   return jwt.sign(payload, jwtSecret, options);
-// }
 function generateToken(user) {
   const payload = {
     userid: user.id,
