@@ -15,7 +15,7 @@ router.post("/", restricted, (req, res) => {
     });
 });
 //Read
-router.get("/recipelist", restricted, (req, res) => {
+router.get("/recipelist", (req, res) => {
   Recipes.findRecipes()
     .then((recipes) => {
       res.status(200).json(recipes);
