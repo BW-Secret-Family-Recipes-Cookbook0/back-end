@@ -1,10 +1,11 @@
 const router = require("express").Router();
 const Recipes = require("./recipes-model.js");
 const restricted = require("../auth/auth-middleware.js");
+const colors = require('colors')
 
 router.post("/", restricted, (req, res) => {
   const newRecipe = req.body;
-  console.log(newRecipe);
+  console.log(newRecipe.rainbow);
 //Create
   Recipes.addRecipe(newRecipe)
     .then((saved) => {
